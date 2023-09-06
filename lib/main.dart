@@ -1,3 +1,4 @@
+import 'package:contador/button.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -32,13 +33,13 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
-  void _incrementCounter() {
+  _incrementCounter() {
     setState(() {
       _counter++;
     });
   }
 
-  void _decrementCounter() {
+  _decrementCounter() {
     setState(() {
       _counter--;
     });
@@ -57,20 +58,15 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              const Text(
-                'Clique no botão abaixo para incrementar:',
-                style: TextStyle(fontSize: 20),
-              ),
-              FloatingActionButton(
+              Button(
+                text: "Clique no botão abaixo para incrementar",
                 onPressed: _incrementCounter,
-                child: const Icon(Icons.add),
+                sum: true,
               ),
-              const Text(
-                'Clique no botão abaixo para decrementar:',
-              ),
-              FloatingActionButton(
+              Button(
+                text: "Clique no botão abaixo para decrementar",
                 onPressed: _decrementCounter,
-                child: const Icon(Icons.remove),
+                sum: false,
               ),
               Text(
                 '$_counter',
